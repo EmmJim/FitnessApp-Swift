@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,146 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FitnessApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hamburguermenu" translatesAutoresizingMaskIntoConstraints="NO" id="TUd-Dm-KIQ">
+                                <rect key="frame" x="16" y="59" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="6pm-6h-vsf"/>
+                                    <constraint firstAttribute="height" constant="30" id="D9o-0H-N4a"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile icon" translatesAutoresizingMaskIntoConstraints="NO" id="FcA-8r-tnd">
+                                <rect key="frame" x="347" y="59" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="rCR-LR-GCD"/>
+                                    <constraint firstAttribute="width" constant="30" id="xY4-r0-e4l"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hola Bibiana!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYr-oU-Trd">
+                                <rect key="frame" x="16" y="141" width="377" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <color key="textColor" red="0.42557826640000002" green="0.15403190259999999" blue="0.70301169159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <toolbar clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jf6-Hy-jcl">
+                                <rect key="frame" x="16" y="784" width="361" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <barButtonItem title="Item" image="house.fill" catalog="system" id="9ja-dg-Ukc">
+                                        <color key="tintColor" red="0.42557826640000002" green="0.15403190259999999" blue="0.70301169159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem title="Item" image="list.bullet.clipboard.fill" catalog="system" width="362.66666666666669" style="plain" id="BL5-WX-nu1">
+                                        <color key="tintColor" red="0.42557826640000002" green="0.15403190259999999" blue="0.70301169159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem title="Item" image="gearshape.fill" catalog="system" width="255.66666666666666" id="Ifw-ez-wbg">
+                                        <color key="tintColor" red="0.42557826640000002" green="0.15403190259999999" blue="0.70301169159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </barButtonItem>
+                                </items>
+                                <color key="barTintColor" red="0.83744150399999995" green="0.80718678239999997" blue="0.99844366309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </toolbar>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.83744150399999995" green="0.80718678239999997" blue="0.99844366309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="gYr-oU-Trd" firstAttribute="top" secondItem="TUd-Dm-KIQ" secondAttribute="bottom" constant="52" id="DBp-Dp-eOA"/>
+                            <constraint firstItem="FcA-8r-tnd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="L9X-cw-FdK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jf6-Hy-jcl" secondAttribute="trailing" constant="16" id="RCm-rT-zos"/>
+                            <constraint firstItem="jf6-Hy-jcl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ghF-tq-tcO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gYr-oU-Trd" secondAttribute="trailing" id="kC1-Lf-wQk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jf6-Hy-jcl" secondAttribute="trailing" constant="16" id="mRJ-YD-vuo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jf6-Hy-jcl" secondAttribute="bottom" id="pJT-aM-VHW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FcA-8r-tnd" secondAttribute="trailing" constant="16" id="pTP-gv-XdR"/>
+                            <constraint firstItem="gYr-oU-Trd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="qFj-Rd-JMX"/>
+                            <constraint firstItem="TUd-Dm-KIQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="sfY-ns-1MX"/>
+                            <constraint firstItem="TUd-Dm-KIQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="wJW-Qs-64Y"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="130.53435114503816" y="-27.464788732394368"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="P2B-PV-rdW">
+            <objects>
+                <viewController id="gCY-EM-kYa" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SDe-fP-KZN">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hamburguermenu" translatesAutoresizingMaskIntoConstraints="NO" id="7HC-3L-wzm">
+                                <rect key="frame" x="16" y="59" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="Uvf-1j-Uw1"/>
+                                    <constraint firstAttribute="height" constant="30" id="iBV-uK-fXN"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile icon" translatesAutoresizingMaskIntoConstraints="NO" id="Lpn-zN-YLp">
+                                <rect key="frame" x="347" y="59" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="E6T-uv-qLr"/>
+                                    <constraint firstAttribute="width" constant="30" id="Wvb-DS-lKz"/>
+                                </constraints>
+                            </imageView>
+                            <toolbar clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sqn-ab-r0d">
+                                <rect key="frame" x="16" y="774" width="361" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <barButtonItem title="Item" image="house.fill" catalog="system" id="asz-lf-dp1">
+                                        <color key="tintColor" red="0.42557826640000002" green="0.15403190259999999" blue="0.70301169159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem title="Item" image="list.bullet.clipboard.fill" catalog="system" width="362.66665649414062" style="plain" id="lQH-qi-WoI">
+                                        <color key="tintColor" red="0.42557826640000002" green="0.15403190259999999" blue="0.70301169159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem title="Item" image="gearshape.fill" catalog="system" width="255.66667175292969" id="xN3-pw-biF">
+                                        <color key="tintColor" red="0.42557826640000002" green="0.15403190259999999" blue="0.70301169159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </barButtonItem>
+                                </items>
+                                <color key="barTintColor" red="0.83744150399999995" green="0.80718678239999997" blue="0.99844366309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </toolbar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2Y8-k3-N5I"/>
+                        <color key="backgroundColor" red="0.83744150399999995" green="0.80718678239999997" blue="0.99844366309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="2Y8-k3-N5I" firstAttribute="bottom" secondItem="Sqn-ab-r0d" secondAttribute="bottom" id="0r9-5R-yei"/>
+                            <constraint firstItem="2Y8-k3-N5I" firstAttribute="trailing" secondItem="Lpn-zN-YLp" secondAttribute="trailing" constant="16" id="477-I5-q8J"/>
+                            <constraint firstItem="7HC-3L-wzm" firstAttribute="top" secondItem="2Y8-k3-N5I" secondAttribute="top" id="9pi-MZ-ueO"/>
+                            <constraint firstAttribute="trailing" secondItem="Sqn-ab-r0d" secondAttribute="trailing" constant="16" id="lTI-xg-5Us"/>
+                            <constraint firstItem="Lpn-zN-YLp" firstAttribute="top" secondItem="2Y8-k3-N5I" secondAttribute="top" id="nl2-wv-aX9"/>
+                            <constraint firstItem="7HC-3L-wzm" firstAttribute="leading" secondItem="2Y8-k3-N5I" secondAttribute="leading" constant="16" id="sYj-nE-QOc"/>
+                            <constraint firstItem="Sqn-ab-r0d" firstAttribute="leading" secondItem="2Y8-k3-N5I" secondAttribute="leading" constant="16" id="vh1-7k-Zgc"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bDG-FP-1dV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="934" y="-27"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Xbg-Gy-rdZ">
+            <objects>
+                <viewController id="F8k-sl-Oax" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dw0-Yj-G0S">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="NL1-K4-M76"/>
+                        <color key="backgroundColor" red="0.83744150399999995" green="0.80718678239999997" blue="0.99844366309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bJA-B9-qys" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1804" y="-27"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="gearshape.fill" catalog="system" width="128" height="123"/>
+        <image name="hamburguermenu" width="512" height="512"/>
+        <image name="house.fill" catalog="system" width="128" height="104"/>
+        <image name="list.bullet.clipboard.fill" catalog="system" width="98" height="128"/>
+        <image name="profile icon" width="512" height="512"/>
+    </resources>
 </document>
