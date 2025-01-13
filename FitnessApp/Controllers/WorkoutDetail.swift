@@ -9,14 +9,20 @@ import UIKit
 
 class WorkoutDetail: UIViewController {
     @IBOutlet var infoView: UIView!
+    @IBOutlet var timeImage: UIView!
+    @IBOutlet var caloriesImage: UIView!
+    @IBOutlet var roundCard: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         infoView.layer.cornerRadius = 25.0
-        infoView.layer.borderWidth = 0.5
+        infoView.layer.borderWidth = 0.2
         infoView.layer.borderColor = UIColor.white.cgColor
+        timeImage.layer.cornerRadius = 10.0
+        caloriesImage.layer.cornerRadius = 10.0
+        roundCard.layer.cornerRadius = 10.0
         navigationController?.navigationBar.tintColor = UIColor.white
     }
     
