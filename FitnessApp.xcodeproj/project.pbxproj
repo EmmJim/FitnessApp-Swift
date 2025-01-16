@@ -14,6 +14,7 @@
 		9F86C5BA2D2D9A5200861432 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F86C5B92D2D9A5200861432 /* Assets.xcassets */; };
 		9F86C5BD2D2D9A5200861432 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 9F86C5BC2D2D9A5200861432 /* Base */; };
 		9FC3498D2D31C15400853B93 /* WorkoutDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC3498C2D31C15400853B93 /* WorkoutDetail.swift */; };
+		9FE9566F2D3971AA007E46F4 /* YoutubeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE9566E2D3971AA007E46F4 /* YoutubeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		9F86C5BC2D2D9A5200861432 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F86C5BE2D2D9A5200861432 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FC3498C2D31C15400853B93 /* WorkoutDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDetail.swift; sourceTree = "<group>"; };
+		9FE9566E2D3971AA007E46F4 /* YoutubeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				9F86C5B92D2D9A5200861432 /* Assets.xcassets */,
 				9F86C5BB2D2D9A5200861432 /* LaunchScreen.storyboard */,
 				9F86C5BE2D2D9A5200861432 /* Info.plist */,
+				9FE9566E2D3971AA007E46F4 /* YoutubeView.swift */,
 			);
 			path = FitnessApp;
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 				9FC3498D2D31C15400853B93 /* WorkoutDetail.swift in Sources */,
 				9F86C5B52D2D9A4F00861432 /* ViewController.swift in Sources */,
 				9F86C5B12D2D9A4F00861432 /* AppDelegate.swift in Sources */,
+				9FE9566F2D3971AA007E46F4 /* YoutubeView.swift in Sources */,
 				9F86C5B32D2D9A4F00861432 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

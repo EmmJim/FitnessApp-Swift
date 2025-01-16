@@ -27,7 +27,11 @@ class ViewController: UIViewController {
         secondImageCard.layer.cornerRadius = 25.0
         carouselImage.layer.cornerRadius = 25.0
         shadowView.layer.cornerRadius = 25.0
-        toolbar.layer.cornerRadius = 25.0
+        toolbar.layer.cornerRadius = 20.0
+        
+        let backButton = UIBarButtonItem()
+        backButton.title = "Atrás"
+        navigationItem.backBarButtonItem = backButton
     }
 
 

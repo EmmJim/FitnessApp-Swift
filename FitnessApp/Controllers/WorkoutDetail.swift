@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import SwiftUI
 
 class WorkoutDetail: UIViewController {
     @IBOutlet var infoView: UIView!
     @IBOutlet var timeImage: UIView!
     @IBOutlet var caloriesImage: UIView!
     @IBOutlet var roundCard: UIView!
+    @IBOutlet var roundCardImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,10 +25,22 @@ class WorkoutDetail: UIViewController {
         timeImage.layer.cornerRadius = 10.0
         caloriesImage.layer.cornerRadius = 10.0
         roundCard.layer.cornerRadius = 10.0
+        roundCardImage.layer.cornerRadius = 10.0
         navigationController?.navigationBar.tintColor = UIColor.white
+        
+        
     }
     
-
+    @IBAction func showVideoPressed(_ sender: UIButton) {
+        let videoID = "09AYfVFf7pg"
+        let youtubeView = YoutubeView(videoID: videoID)
+        
+        let hostingController = UIHostingController(rootView: youtubeView)
+        
+        hostingController.modalPresentationStyle = .fullScreen
+        self.present(hostingController, animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
