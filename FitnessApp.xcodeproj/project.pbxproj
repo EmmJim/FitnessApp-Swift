@@ -21,6 +21,11 @@
 		9F86C5B82D2D9A4F00861432 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 9F86C5B72D2D9A4F00861432 /* Base */; };
 		9F86C5BA2D2D9A5200861432 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F86C5B92D2D9A5200861432 /* Assets.xcassets */; };
 		9F86C5BD2D2D9A5200861432 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 9F86C5BC2D2D9A5200861432 /* Base */; };
+		9FBC55B22D404BC100FA6DEE /* HomeScreenVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FBC55B12D404BC100FA6DEE /* HomeScreenVC.xib */; };
+		9FBC55B42D404DBB00FA6DEE /* MyRoutineScreenVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FBC55B32D404DBB00FA6DEE /* MyRoutineScreenVC.xib */; };
+		9FBC55B62D404E8200FA6DEE /* SettingsScreenVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FBC55B52D404E8200FA6DEE /* SettingsScreenVC.xib */; };
+		9FBC55B82D404EC100FA6DEE /* DrawerNavigationScreenVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FBC55B72D404EC100FA6DEE /* DrawerNavigationScreenVC.xib */; };
+		9FBC55BA2D40534700FA6DEE /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 9FBC55B92D40534700FA6DEE /* FirebaseMessaging */; };
 		9FC3498D2D31C15400853B93 /* MyRoutineScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC3498C2D31C15400853B93 /* MyRoutineScreenVC.swift */; };
 		9FE9566F2D3971AA007E46F4 /* YoutubeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE9566E2D3971AA007E46F4 /* YoutubeView.swift */; };
 /* End PBXBuildFile section */
@@ -37,6 +42,10 @@
 		9F86C5B92D2D9A5200861432 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F86C5BC2D2D9A5200861432 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F86C5BE2D2D9A5200861432 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FBC55B12D404BC100FA6DEE /* HomeScreenVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeScreenVC.xib; sourceTree = "<group>"; };
+		9FBC55B32D404DBB00FA6DEE /* MyRoutineScreenVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyRoutineScreenVC.xib; sourceTree = "<group>"; };
+		9FBC55B52D404E8200FA6DEE /* SettingsScreenVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsScreenVC.xib; sourceTree = "<group>"; };
+		9FBC55B72D404EC100FA6DEE /* DrawerNavigationScreenVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DrawerNavigationScreenVC.xib; sourceTree = "<group>"; };
 		9FC3498C2D31C15400853B93 /* MyRoutineScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRoutineScreenVC.swift; sourceTree = "<group>"; };
 		9FE9566E2D3971AA007E46F4 /* YoutubeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -46,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FBC55BA2D40534700FA6DEE /* FirebaseMessaging in Frameworks */,
 				9F2383AA2D3B07780066F17A /* FirebaseAuth in Frameworks */,
 				9F2383AC2D3B07780066F17A /* FirebaseFirestore in Frameworks */,
 				9F2383B02D3B07940066F17A /* FirebaseCore in Frameworks */,
@@ -84,6 +94,7 @@
 		9F86C5AF2D2D9A4F00861432 /* FitnessApp */ = {
 			isa = PBXGroup;
 			children = (
+				9FBC55B02D404BA900FA6DEE /* Screens */,
 				9FC3498B2D31C10C00853B93 /* Controllers */,
 				9F86C5B02D2D9A4F00861432 /* AppDelegate.swift */,
 				9F86C5B22D2D9A4F00861432 /* SceneDelegate.swift */,
@@ -94,6 +105,17 @@
 				9F2383B12D3B08330066F17A /* GoogleService-Info.plist */,
 			);
 			path = FitnessApp;
+			sourceTree = "<group>";
+		};
+		9FBC55B02D404BA900FA6DEE /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				9FBC55B12D404BC100FA6DEE /* HomeScreenVC.xib */,
+				9FBC55B32D404DBB00FA6DEE /* MyRoutineScreenVC.xib */,
+				9FBC55B52D404E8200FA6DEE /* SettingsScreenVC.xib */,
+				9FBC55B72D404EC100FA6DEE /* DrawerNavigationScreenVC.xib */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		9FC3498B2D31C10C00853B93 /* Controllers */ = {
@@ -130,6 +152,7 @@
 				9F2383AD2D3B07780066F17A /* FirebaseStorage */,
 				9F2383AF2D3B07940066F17A /* FirebaseCore */,
 				9F2383B52D3B17BE0066F17A /* FirebaseAnalytics */,
+				9FBC55B92D40534700FA6DEE /* FirebaseMessaging */,
 			);
 			productName = FitnessApp;
 			productReference = 9F86C5AD2D2D9A4F00861432 /* FitnessApp.app */;
@@ -179,7 +202,11 @@
 				9F86C5BA2D2D9A5200861432 /* Assets.xcassets in Resources */,
 				9F2383B22D3B08330066F17A /* GoogleService-Info.plist in Resources */,
 				9F86C5BD2D2D9A5200861432 /* Base in Resources */,
+				9FBC55B82D404EC100FA6DEE /* DrawerNavigationScreenVC.xib in Resources */,
+				9FBC55B42D404DBB00FA6DEE /* MyRoutineScreenVC.xib in Resources */,
 				9F86C5B82D2D9A4F00861432 /* Base in Resources */,
+				9FBC55B22D404BC100FA6DEE /* HomeScreenVC.xib in Resources */,
+				9FBC55B62D404E8200FA6DEE /* SettingsScreenVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,6 +485,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9F2383A72D3B06E80066F17A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalytics;
+		};
+		9FBC55B92D40534700FA6DEE /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9F2383A72D3B06E80066F17A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

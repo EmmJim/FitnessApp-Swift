@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import FirebaseAnalytics
+import FirebaseAuth
 
 class DrawerNavigator: UIViewController {
     @IBOutlet var tableView: UITableView!
     
-    private let mySettings = ["Home", "My Routine", "Settings", "Profile"]
+    private let mySettings = ["Home", "My Routine", "Settings", "Profile", "Cerrar Sesión"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,5 +54,23 @@ extension DrawerNavigator: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(mySettings[indexPath.row])
+        if let navigationController = self.navigationController {
+            print("NavigationController: \(navigationController)")
+            if let rootVC = navigationController.viewControllers.first {
+                navigationController.popToViewController(rootVC, animated: true)
+            }
+        } else {
+            print("No se encontró un NavigationController")
+        }
+        if(mySettings[indexPath.row] == "Cerrar Sesión"){
+            print("Entra")
+            do {
+                try Auth.auth().signOut()
+                navigationController?.popToRootViewController(animated: true)
+            } catch {
+                print("Error al cerrar sesión")
+                
+            }
+        }
     }
 }
