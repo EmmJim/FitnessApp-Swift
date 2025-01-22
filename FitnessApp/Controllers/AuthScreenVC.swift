@@ -15,9 +15,24 @@ class AuthScreenVC: UIViewController {
     
     @IBOutlet var registerButton: UIButton!
     @IBOutlet var loginButton: UIButton!
+    @IBOutlet var halfView: UIView!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Limpiar los textFields cuando la vista esté a punto de aparecer
+        emailInput.text = ""
+        passwordInput.text = ""
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Crear el gesto para detectar toques en cualquier parte de la vista
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+            
+            // Agregar el gesto a la vista principal
+            view.addGestureRecognizer(tapGesture)
         
         // Comprobar la sesión del usuario autenticado
         let defaults = UserDefaults.standard
@@ -25,6 +40,8 @@ class AuthScreenVC: UIViewController {
            let provider = defaults.value(forKey: "provider") as? String {
             self.navigationController?.pushViewController(HomeScreenVC(email: email, provider: ProviderType.init(rawValue: provider)!), animated: false)
         }
+        
+        updateUI()
     }
     
     @IBAction func registerAction(_ sender: UIButton) {
@@ -64,5 +81,41 @@ class AuthScreenVC: UIViewController {
         }
     }
 
+    func updateUI() {
+        addBottomBorder(to: emailInput)
+        addBottomBorder(to: passwordInput)
+        
+        halfView.layer.cornerRadius = 25.0
+        
+        registerButton.layer.cornerRadius = 10.0
+        registerButton.layer.shadowColor = UIColor.black.cgColor // Color de la sombra (negro en este caso)
+        registerButton.layer.shadowOffset = CGSize(width: 2, height: 2)  // Desplazamiento de la sombra (2 puntos a la derecha y 2 puntos hacia abajo)
+        registerButton.layer.shadowOpacity = 0.5  // Opacidad de la sombra (50% de opacidad)
+        registerButton.layer.shadowRadius = 4  // Radio de difuminado de la sombra (4 puntos de difuminado)
+        registerButton.layer.masksToBounds = false
+        
+        loginButton.layer.cornerRadius = 10.0
+        loginButton.layer.shadowColor = UIColor.black.cgColor // Color de la sombra (negro en este caso)
+        loginButton.layer.shadowOffset = CGSize(width: 2, height: 2)  // Desplazamiento de la sombra (2 puntos a la derecha y 2 puntos hacia abajo)
+        loginButton.layer.shadowOpacity = 0.5  // Opacidad de la sombra (50% de opacidad)
+        loginButton.layer.shadowRadius = 4  // Radio de difuminado de la sombra (4 puntos de difuminado)
+        loginButton.layer.masksToBounds = false
+    }
     
+    func addBottomBorder(to textField: UITextField) {
+        let bottomBorder = CALayer()
+        
+        // Establece el color del borde
+        bottomBorder.backgroundColor = UIColor(red: 90/255, green: 112/255, blue: 252/255, alpha: 1).cgColor  // Color del borde
+        
+        // Establece el grosor del borde
+        bottomBorder.frame = CGRect(x: 0, y: textField.frame.height - 1, width: textField.frame.width, height: 0.7)
+        
+        // Agregar la capa de borde al UITextField
+        textField.layer.addSublayer(bottomBorder)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)  // Esto hace que el teclado se oculte
+    }
 }

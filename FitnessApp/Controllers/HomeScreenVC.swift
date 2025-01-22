@@ -84,5 +84,9 @@ class HomeScreenVC: UIViewController {
         self.navigationController?.pushViewController(MyRoutineScreenVC(), animated: true)
     }
     
+    @IBAction func goToSettings(_ sender: Any) {
+        print("Entra 2")
+        self.navigationController?.pushViewController(SettingsScreenVC(), animated: true)
+    }
 }
 
