@@ -40,19 +40,9 @@ class SettingsScreenVC: UIViewController {
         tableView.backgroundColor = UIColor.white
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.register(UINib(nibName: "SettingsCell", bundle: nil), forCellReuseIdentifier: "SettingsCellIdentifier")
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension SettingsScreenVC: UITableViewDataSource {
@@ -95,22 +85,14 @@ extension SettingsScreenVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "mysettingcell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsCellIdentifier", for: indexPath) as! SettingsCell
         
         if indexPath.section == 0 {
-            cell.textLabel?.text = mySettingsOptions[indexPath.row]
+            cell.label.text = mySettingsOptions[indexPath.row]
         } else {
-            cell.textLabel?.text = mySecondSectionSettingOptions[indexPath.row]
+            cell.label.text = mySecondSectionSettingOptions[indexPath.row]
         }
-        cell.backgroundColor = UIColor.white
-        cell.textLabel?.font = UIFont.systemFont(ofSize: 18)
-        cell.textLabel?.textColor = UIColor.black
-        cell.accessoryType = .disclosureIndicator
         
-        // Establecer el color de fondo cuando el cell está seleccionado
-                let selectedBackgroundView = UIView()
-                selectedBackgroundView.backgroundColor = UIColor(red: 163/255, green: 70/255, blue: 235/255, alpha: 1)  // Color amarillo
-                cell.selectedBackgroundView = selectedBackgroundView
         return cell
     }
 }
@@ -120,10 +102,14 @@ extension SettingsScreenVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         // Obtener la celda seleccionada
-                let selectedCell = tableView.cellForRow(at: indexPath)
-                
-                // Cambiar el color del texto cuando la celda es seleccionada
-                selectedCell?.textLabel?.textColor = UIColor.white
+                let selectedCell = tableView.cellForRow(at: indexPath) as! SettingsCell
+        
+        selectedCell.backgroundColor = UIColor(red: 163/255, green: 70/255, blue: 235/255, alpha: 1)
+        selectedCell.label.textColor = UIColor.white
+        selectedCell.labelView.backgroundColor = UIColor(red: 163/255, green: 70/255, blue: 235/255, alpha: 1)
+            
+            // Cambiar el tint de la imagen
+        selectedCell.accessoryIcon.tintColor = UIColor.white
         
         print(mySettingsOptions[indexPath.row])
         if(mySettingsOptions[indexPath.row] == "Log Out"){
@@ -144,11 +130,15 @@ extension SettingsScreenVC: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-            // Obtener la celda deseleccionada
-            let deselectedCell = tableView.cellForRow(at: indexPath)
+            let deselectedCell = tableView.cellForRow(at: indexPath) as! SettingsCell
             
-            // Restaurar el color del texto a su color original cuando se deselecciona
-            deselectedCell?.textLabel?.textColor = UIColor.black  // El color original del texto
+            
+        deselectedCell.label.textColor = UIColor.black
+        deselectedCell.backgroundColor = UIColor.white
+        deselectedCell.labelView.backgroundColor = UIColor.white
+            
+            // Cambiar el tint de la imagen
+        deselectedCell.accessoryIcon.tintColor = UIColor(red: 163/255, green: 70/255, blue: 235/255, alpha: 1)
         }
     
 }

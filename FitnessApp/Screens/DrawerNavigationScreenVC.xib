@@ -9,7 +9,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DrawerNavigator" customModule="FitnessApp" customModuleProvider="target">
             <connections>
-                <outlet property="view" destination="rP7-aU-f3T" id="hhq-Tf-oWs"/>
+                <outlet property="tableView" destination="l0o-P3-qtH" id="Zrm-2Y-fZN"/>
+                <outlet property="view" destination="rP7-aU-f3T" id="WCw-Lg-9dw"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

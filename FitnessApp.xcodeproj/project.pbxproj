@@ -14,6 +14,8 @@
 		9F2383B22D3B08330066F17A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F2383B12D3B08330066F17A /* GoogleService-Info.plist */; };
 		9F2383B42D3B17680066F17A /* AuthScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2383B32D3B17680066F17A /* AuthScreenVC.swift */; };
 		9F2383B62D3B17BE0066F17A /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 9F2383B52D3B17BE0066F17A /* FirebaseAnalytics */; };
+		9F29CCF52D481CA200450659 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F29CCF32D481CA200450659 /* SettingsCell.swift */; };
+		9F29CCF62D481CA200450659 /* SettingsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F29CCF42D481CA200450659 /* SettingsCell.xib */; };
 		9F3030462D3EFA7A003D8DB8 /* DrawerNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3030452D3EFA7A003D8DB8 /* DrawerNavigator.swift */; };
 		9F3C66A52D415EF30028E933 /* SettingsScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3C66A42D415EF30028E933 /* SettingsScreenVC.swift */; };
 		9F86C5B12D2D9A4F00861432 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F86C5B02D2D9A4F00861432 /* AppDelegate.swift */; };
@@ -34,6 +36,8 @@
 /* Begin PBXFileReference section */
 		9F2383B12D3B08330066F17A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9F2383B32D3B17680066F17A /* AuthScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthScreenVC.swift; sourceTree = "<group>"; };
+		9F29CCF32D481CA200450659 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		9F29CCF42D481CA200450659 /* SettingsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsCell.xib; sourceTree = "<group>"; };
 		9F3030452D3EFA7A003D8DB8 /* DrawerNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerNavigator.swift; sourceTree = "<group>"; };
 		9F3C66A42D415EF30028E933 /* SettingsScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenVC.swift; sourceTree = "<group>"; };
 		9F86C5AD2D2D9A4F00861432 /* FitnessApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +80,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9F29CCF22D481C3100450659 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				9F29CCF32D481CA200450659 /* SettingsCell.swift */,
+				9F29CCF42D481CA200450659 /* SettingsCell.xib */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		9F86C5A42D2D9A4F00861432 = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +124,7 @@
 		9FBC55B02D404BA900FA6DEE /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				9F29CCF22D481C3100450659 /* Components */,
 				9F86C5B62D2D9A4F00861432 /* Main.storyboard */,
 				9FBC55B12D404BC100FA6DEE /* HomeScreenVC.xib */,
 				9FBC55B32D404DBB00FA6DEE /* MyRoutineScreenVC.xib */,
@@ -205,6 +219,7 @@
 				9F86C5BA2D2D9A5200861432 /* Assets.xcassets in Resources */,
 				9F2383B22D3B08330066F17A /* GoogleService-Info.plist in Resources */,
 				9F86C5BD2D2D9A5200861432 /* Base in Resources */,
+				9F29CCF62D481CA200450659 /* SettingsCell.xib in Resources */,
 				9FBC55B82D404EC100FA6DEE /* DrawerNavigationScreenVC.xib in Resources */,
 				9FBC55B42D404DBB00FA6DEE /* MyRoutineScreenVC.xib in Resources */,
 				9F86C5B82D2D9A4F00861432 /* Base in Resources */,
@@ -222,6 +237,7 @@
 			files = (
 				9F3030462D3EFA7A003D8DB8 /* DrawerNavigator.swift in Sources */,
 				9FC3498D2D31C15400853B93 /* MyRoutineScreenVC.swift in Sources */,
+				9F29CCF52D481CA200450659 /* SettingsCell.swift in Sources */,
 				9F86C5B52D2D9A4F00861432 /* HomeScreenVC.swift in Sources */,
 				9F3C66A52D415EF30028E933 /* SettingsScreenVC.swift in Sources */,
 				9F86C5B12D2D9A4F00861432 /* AppDelegate.swift in Sources */,

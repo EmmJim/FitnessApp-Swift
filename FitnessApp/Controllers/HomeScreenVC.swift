@@ -64,21 +64,7 @@ class HomeScreenVC: UIViewController {
     }
     @IBAction func toggleDrawer(_ sender: UIButton) {
         
-        let defaults = UserDefaults.standard
-        defaults.removeObject(forKey: "email")
-        defaults.removeObject(forKey: "provider")
-        defaults.synchronize()
-        
-        switch provider {
-        case .basic, .google:
-            do {
-                try Auth.auth().signOut()
-                navigationController?.popToRootViewController(animated: true)
-            } catch {
-                print("Error al cerrar sesión")
-                
-            }
-        }
+        self.navigationController?.pushViewController(DrawerNavigator(), animated: true)
     }
     @IBAction func cardPressed(_ sender: Any) {
         self.navigationController?.pushViewController(MyRoutineScreenVC(), animated: true)

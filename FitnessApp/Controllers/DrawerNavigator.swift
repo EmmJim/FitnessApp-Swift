@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import FirebaseAnalytics
 import FirebaseAuth
 
 class DrawerNavigator: UIViewController {
@@ -16,7 +15,7 @@ class DrawerNavigator: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tableView.dataSource = self
         tableView.delegate = self
     }
