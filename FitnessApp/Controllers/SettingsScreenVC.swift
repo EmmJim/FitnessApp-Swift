@@ -41,6 +41,8 @@ class SettingsScreenVC: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: "SettingsCell", bundle: nil), forCellReuseIdentifier: "SettingsCellIdentifier")
+        
+        navigationController?.navigationBar.tintColor = UIColor(red: 163/255, green: 70/255, blue: 235/255, alpha: 1)
     }
     
 }
@@ -106,6 +108,7 @@ extension SettingsScreenVC: UITableViewDelegate {
         
         selectedCell.backgroundColor = UIColor(red: 163/255, green: 70/255, blue: 235/255, alpha: 1)
         selectedCell.label.textColor = UIColor.white
+        selectedCell.stackView.backgroundColor = UIColor(red: 163/255, green: 70/255, blue: 235/255, alpha: 1)
         selectedCell.labelView.backgroundColor = UIColor(red: 163/255, green: 70/255, blue: 235/255, alpha: 1)
             
             // Cambiar el tint de la imagen
@@ -135,6 +138,7 @@ extension SettingsScreenVC: UITableViewDelegate {
             
         deselectedCell.label.textColor = UIColor.black
         deselectedCell.backgroundColor = UIColor.white
+        deselectedCell.stackView.backgroundColor = UIColor.white
         deselectedCell.labelView.backgroundColor = UIColor.white
             
             // Cambiar el tint de la imagen

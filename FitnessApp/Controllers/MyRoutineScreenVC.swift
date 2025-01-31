@@ -29,7 +29,7 @@ class MyRoutineScreenVC: UIViewController {
         caloriesImage.layer.cornerRadius = 10.0
         roundCard.layer.cornerRadius = 10.0
         roundCardImage.layer.cornerRadius = 10.0
-        navigationController?.navigationBar.tintColor = UIColor.white
+        navigationController?.navigationBar.tintColor = UIColor(red: 165/255, green: 72/255, blue: 238/255, alpha: 1.0)
     }
     
     @IBAction func showVideoPressed(_ sender: UIButton) {

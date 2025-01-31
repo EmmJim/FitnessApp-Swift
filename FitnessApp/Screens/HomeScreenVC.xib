@@ -12,6 +12,7 @@
                 <outlet property="cardView" destination="Y3A-ou-Dnx" id="ceb-ue-gbg"/>
                 <outlet property="carouselImage" destination="hfO-xh-ZR7" id="dQt-3W-HMu"/>
                 <outlet property="imageCard" destination="ZXL-IX-Gul" id="d3o-pU-bsX"/>
+                <outlet property="planButton" destination="RXH-Yy-6Dd" id="Nx8-t3-59e"/>
                 <outlet property="secondCardView" destination="5a5-cl-U7y" id="w9J-L7-1E1"/>
                 <outlet property="secondImageCard" destination="QDg-qy-QDt" id="Cc3-Rt-N5t"/>
                 <outlet property="shadowView" destination="2Ei-tn-JY4" id="eh2-mc-oBb"/>
@@ -179,6 +180,19 @@
                         <constraint firstAttribute="width" constant="361" id="oAw-d8-ygo"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RXH-Yy-6Dd">
+                    <rect key="frame" x="106" y="772" width="181" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.6390689611" green="0.27617594600000001" blue="0.92293602230000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Ver mi Plan Completo">
+                        <fontDescription key="titleFontDescription" type="boldSystem" pointSize="15"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="goToPlan:" destination="-1" eventType="touchUpInside" id="0iU-39-DsI"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="kuJ-yJ-FHL"/>
             <color key="backgroundColor" red="0.83744150399999995" green="0.80718678239999997" blue="0.99844366309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

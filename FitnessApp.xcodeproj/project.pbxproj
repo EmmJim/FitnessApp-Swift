@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F13FCE22D4D498300EF9467 /* PopularWorkoutScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F13FCE12D4D498300EF9467 /* PopularWorkoutScreenVC.swift */; };
+		9F13FCE42D4D4DC100EF9467 /* PopularWorkoutScreenVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F13FCE32D4D4DC100EF9467 /* PopularWorkoutScreenVC.xib */; };
 		9F2383AA2D3B07780066F17A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 9F2383A92D3B07780066F17A /* FirebaseAuth */; };
 		9F2383AC2D3B07780066F17A /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 9F2383AB2D3B07780066F17A /* FirebaseFirestore */; };
 		9F2383AE2D3B07780066F17A /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 9F2383AD2D3B07780066F17A /* FirebaseStorage */; };
@@ -34,6 +36,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F13FCE12D4D498300EF9467 /* PopularWorkoutScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularWorkoutScreenVC.swift; sourceTree = "<group>"; };
+		9F13FCE32D4D4DC100EF9467 /* PopularWorkoutScreenVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularWorkoutScreenVC.xib; sourceTree = "<group>"; };
 		9F2383B12D3B08330066F17A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9F2383B32D3B17680066F17A /* AuthScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthScreenVC.swift; sourceTree = "<group>"; };
 		9F29CCF32D481CA200450659 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
@@ -130,6 +134,7 @@
 				9FBC55B32D404DBB00FA6DEE /* MyRoutineScreenVC.xib */,
 				9FBC55B52D404E8200FA6DEE /* SettingsScreenVC.xib */,
 				9FBC55B72D404EC100FA6DEE /* DrawerNavigationScreenVC.xib */,
+				9F13FCE32D4D4DC100EF9467 /* PopularWorkoutScreenVC.xib */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -143,6 +148,7 @@
 				9FE9566E2D3971AA007E46F4 /* YoutubeView.swift */,
 				9F3030452D3EFA7A003D8DB8 /* DrawerNavigator.swift */,
 				9F3C66A42D415EF30028E933 /* SettingsScreenVC.swift */,
+				9F13FCE12D4D498300EF9467 /* PopularWorkoutScreenVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -216,6 +222,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F13FCE42D4D4DC100EF9467 /* PopularWorkoutScreenVC.xib in Resources */,
 				9F86C5BA2D2D9A5200861432 /* Assets.xcassets in Resources */,
 				9F2383B22D3B08330066F17A /* GoogleService-Info.plist in Resources */,
 				9F86C5BD2D2D9A5200861432 /* Base in Resources */,
@@ -244,6 +251,7 @@
 				9FE9566F2D3971AA007E46F4 /* YoutubeView.swift in Sources */,
 				9F2383B42D3B17680066F17A /* AuthScreenVC.swift in Sources */,
 				9F86C5B32D2D9A4F00861432 /* SceneDelegate.swift in Sources */,
+				9F13FCE22D4D498300EF9467 /* PopularWorkoutScreenVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

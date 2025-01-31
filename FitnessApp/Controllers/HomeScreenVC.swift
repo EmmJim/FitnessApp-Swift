@@ -21,7 +21,8 @@ class HomeScreenVC: UIViewController {
     @IBOutlet var secondImageCard: UIImageView!
     @IBOutlet var carouselImage: UIImageView!
     @IBOutlet var shadowView: UIView!
-
+    @IBOutlet var planButton: UIButton!
+    
     //Variables
     private let email: String
     private let provider: ProviderType
@@ -57,6 +58,7 @@ class HomeScreenVC: UIViewController {
         secondImageCard?.layer.cornerRadius = 25.0
         carouselImage?.layer.cornerRadius = 25.0
         shadowView?.layer.cornerRadius = 25.0
+        planButton?.layer.cornerRadius = 10.0
         
         let backButton = UIBarButtonItem()
         backButton.title = "Atrás"
@@ -73,6 +75,9 @@ class HomeScreenVC: UIViewController {
     @IBAction func goToSettings(_ sender: Any) {
         print("Entra 2")
         self.navigationController?.pushViewController(SettingsScreenVC(), animated: true)
+    }
+    @IBAction func goToPlan(_ sender: UIButton) {
+        self.navigationController?.pushViewController(PopularWorkoutScreenVC(), animated: true)
     }
 }
 

@@ -9,6 +9,7 @@ import UIKit
 
 class SettingsCell: UITableViewCell {
     
+    @IBOutlet var stackView: UIStackView!
     @IBOutlet var labelView: UIView!
     @IBOutlet var label: UILabel!
     @IBOutlet var accessoryIcon: UIImageView!
