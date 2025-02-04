@@ -11,6 +11,7 @@
             <connections>
                 <outlet property="dayLabel" destination="UwX-7I-Uxv" id="Az5-Zg-YHs"/>
                 <outlet property="myPageControl" destination="pFn-rg-Vqh" id="mpr-rw-l3l"/>
+                <outlet property="section1Label" destination="EZU-wN-HOT" id="tbg-Dm-mO0"/>
                 <outlet property="sectionView1" destination="JMA-HD-wiB" id="sSG-Ju-Qe5"/>
                 <outlet property="sectionView2" destination="U7T-Nh-S52" id="taY-KM-CcO"/>
                 <outlet property="view" destination="iN0-l3-epB" id="pgQ-k0-3IZ"/>
@@ -59,7 +60,7 @@
                     <color key="backgroundColor" red="0.47284566890000002" green="0.53339829139999995" blue="0.66777843240000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </stackView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lunes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UwX-7I-Uxv">
-                    <rect key="frame" x="16" y="121" width="361" height="25.333333333333371"/>
+                    <rect key="frame" x="16" y="120.99999999999999" width="361" height="25.333333333333329"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>

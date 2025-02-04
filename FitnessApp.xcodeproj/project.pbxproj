@@ -33,6 +33,7 @@
 		9FBC55BA2D40534700FA6DEE /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 9FBC55B92D40534700FA6DEE /* FirebaseMessaging */; };
 		9FC3498D2D31C15400853B93 /* MyRoutineScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC3498C2D31C15400853B93 /* MyRoutineScreenVC.swift */; };
 		9FE9566F2D3971AA007E46F4 /* YoutubeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE9566E2D3971AA007E46F4 /* YoutubeView.swift */; };
+		9FF9E7712D52A02600ADDFC9 /* WorkoutPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF9E7702D52A02600ADDFC9 /* WorkoutPlan.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		9FBC55B72D404EC100FA6DEE /* DrawerNavigationScreenVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DrawerNavigationScreenVC.xib; sourceTree = "<group>"; };
 		9FC3498C2D31C15400853B93 /* MyRoutineScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRoutineScreenVC.swift; sourceTree = "<group>"; };
 		9FE9566E2D3971AA007E46F4 /* YoutubeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeView.swift; sourceTree = "<group>"; };
+		9FF9E7702D52A02600ADDFC9 /* WorkoutPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutPlan.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 		9F86C5AF2D2D9A4F00861432 /* FitnessApp */ = {
 			isa = PBXGroup;
 			children = (
+				9FF9E76F2D529FB600ADDFC9 /* Models */,
 				9FBC55B02D404BA900FA6DEE /* Screens */,
 				9FC3498B2D31C10C00853B93 /* Controllers */,
 				9F86C5B02D2D9A4F00861432 /* AppDelegate.swift */,
@@ -151,6 +154,14 @@
 				9F13FCE12D4D498300EF9467 /* PopularWorkoutScreenVC.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9FF9E76F2D529FB600ADDFC9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9FF9E7702D52A02600ADDFC9 /* WorkoutPlan.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,6 +257,7 @@
 				9FC3498D2D31C15400853B93 /* MyRoutineScreenVC.swift in Sources */,
 				9F29CCF52D481CA200450659 /* SettingsCell.swift in Sources */,
 				9F86C5B52D2D9A4F00861432 /* HomeScreenVC.swift in Sources */,
+				9FF9E7712D52A02600ADDFC9 /* WorkoutPlan.swift in Sources */,
 				9F3C66A52D415EF30028E933 /* SettingsScreenVC.swift in Sources */,
 				9F86C5B12D2D9A4F00861432 /* AppDelegate.swift in Sources */,
 				9FE9566F2D3971AA007E46F4 /* YoutubeView.swift in Sources */,

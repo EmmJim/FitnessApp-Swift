@@ -6,16 +6,22 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 class PopularWorkoutScreenVC: UIViewController {
     
+    let db = Firestore.firestore()
+    
     @IBOutlet var sectionView1: UIStackView!
+    @IBOutlet var section1Label: UILabel!
     @IBOutlet var sectionView2: UIStackView!
     @IBOutlet var myPageControl: UISegmentedControl!
     @IBOutlet var dayLabel: UILabel!
     
     
     private let mySections: [String] = ["L","M", "M", "J", "V", "S", "D"]
+    
+    private var myDays: [WorkoutPlan] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +47,42 @@ class PopularWorkoutScreenVC: UIViewController {
             
         // Cambiar el contenido basado en la selección inicial
         segmentedControlValueChanged(myPageControl)
+        
+        // Get Database data
+        loadData()
+    }
+    
+    func loadData() {
+        db.collection("workout-plan").getDocuments { (querySnapshot, error) in
+            if let e = error {
+                print("There was an issue retrieving data from Firestore \(e)")
+            } else {
+                if let snapshotDocuments = querySnapshot?.documents {
+                    for doc in snapshotDocuments {
+                        let data = doc.data()
+                        print(data)
+                        if let myData = data["days"] as? [[String: Any]] { // Asegúrate de que "days" es un array de diccionarios
+                            do {
+                                // Convertir los datos de Firebase a modelos Swift
+                                let jsonData = try JSONSerialization.data(withJSONObject: myData, options: [])
+                                let decoder = JSONDecoder()
+                                let days = try decoder.decode([DayStruct].self, from: jsonData)
+                                let myNewWorkout = WorkoutPlan(days: days)
+                                self.myDays.append(myNewWorkout)
+                                if let firstDay = self.myDays.first?.days.first {
+                                    print(firstDay.dayName)
+                                    self.section1Label.text = firstDay.dayName
+                                } else {
+                                    print("No hay días disponibles.")
+                                }
+                            } catch {
+                                print("Error al decodificar los datos: \(error)")
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     
     @IBAction func segmentedControlValueChanged(_ sender: UISegmentedControl) {
