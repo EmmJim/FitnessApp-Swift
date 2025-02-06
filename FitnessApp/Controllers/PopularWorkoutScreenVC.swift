@@ -14,14 +14,13 @@ class PopularWorkoutScreenVC: UIViewController {
     
     @IBOutlet var sectionView1: UIStackView!
     @IBOutlet var section1Label: UILabel!
-    @IBOutlet var sectionView2: UIStackView!
     @IBOutlet var myPageControl: UISegmentedControl!
     @IBOutlet var dayLabel: UILabel!
     
     
     private let mySections: [String] = ["L","M", "M", "J", "V", "S", "D"]
     
-    private var myDays: [WorkoutPlan] = []
+    private var myDays: [DayStruct] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,8 +38,10 @@ class PopularWorkoutScreenVC: UIViewController {
             myPageControl.insertSegment(withTitle: value, at: index, animated: true)
         }
         
+        // Get Database data
+        loadData()
+        
         sectionView1.isHidden = false
-        sectionView2.isHidden = true
         
         // Establecer la primera sección seleccionada
         myPageControl.selectedSegmentIndex = 0
@@ -48,8 +49,7 @@ class PopularWorkoutScreenVC: UIViewController {
         // Cambiar el contenido basado en la selección inicial
         segmentedControlValueChanged(myPageControl)
         
-        // Get Database data
-        loadData()
+        
     }
     
     func loadData() {
@@ -58,27 +58,40 @@ class PopularWorkoutScreenVC: UIViewController {
                 print("There was an issue retrieving data from Firestore \(e)")
             } else {
                 if let snapshotDocuments = querySnapshot?.documents {
+                    var routines: [DayStruct] = []  // Arreglo para guardar las rutinas
+
                     for doc in snapshotDocuments {
                         let data = doc.data()
-                        print(data)
-                        if let myData = data["days"] as? [[String: Any]] { // Asegúrate de que "days" es un array de diccionarios
-                            do {
-                                // Convertir los datos de Firebase a modelos Swift
-                                let jsonData = try JSONSerialization.data(withJSONObject: myData, options: [])
-                                let decoder = JSONDecoder()
-                                let days = try decoder.decode([DayStruct].self, from: jsonData)
-                                let myNewWorkout = WorkoutPlan(days: days)
-                                self.myDays.append(myNewWorkout)
-                                if let firstDay = self.myDays.first?.days.first {
-                                    print(firstDay.dayName)
-                                    self.section1Label.text = firstDay.dayName
-                                } else {
-                                    print("No hay días disponibles.")
+                        
+                        if let days = data["days"] as? [[String: Any]] {  // Accede al arreglo "days"
+                            for day in days {
+                                if let dayName = day["dayName"] as? String,
+                                   let routineName = day["routineName"] as? String,
+                                   let routineData = day["routine"] as? [[String: Any]] {
+                                    
+                                    var exercises: [Exercise] = []
+                                    
+                                    for exerciseData in routineData {
+                                        if let exercise = exerciseData["exercise"] as? String,
+                                           let reps = exerciseData["reps"] as? Int,
+                                           let series = exerciseData["series"] as? Int {
+                                            let exerciseObj = Exercise(exercise: exercise, series: series, reps: reps)
+                                            exercises.append(exerciseObj)
+                                        }
+                                    }
+                                    
+                                    let routine = DayStruct(dayName: dayName, routine: exercises, routineName: routineName)
+                                    routines.append(routine)
                                 }
-                            } catch {
-                                print("Error al decodificar los datos: \(error)")
                             }
                         }
+                    }
+
+                    // Aquí tienes el arreglo 'routines' con todas las rutinas cargadas
+                    self.myDays.append(contentsOf: routines)
+                    
+                    DispatchQueue.main.async {
+                        self.segmentedControlValueChanged(self.myPageControl)  // Esto llamará la función nuevamente con los datos actualizados
                     }
                 }
             }
@@ -87,18 +100,28 @@ class PopularWorkoutScreenVC: UIViewController {
     
     @IBAction func segmentedControlValueChanged(_ sender: UISegmentedControl) {
         
-        sectionView1.isHidden = true
-        sectionView2.isHidden = true
+        print(myDays)
         
         switch sender.selectedSegmentIndex {
             case 0:
-                sectionView1.isHidden = false
-                // Actualiza el contenido de sectionView1 si es necesario
-                dayLabel.text = "Lunes"
+                    dayLabel.text = "Lunes"
+                    guard myDays.count > 0 else {
+                        
+                        section1Label.text = "Sin datos disponibles"
+                        return
+                    }
+                    
+                    section1Label.text = myDays[0].dayName
             case 1:
-                sectionView2.isHidden = false
                 // Actualiza el contenido de sectionView2 si es necesario
                 dayLabel.text = "Martes"
+            
+                guard myDays.count > 0 else {
+                    section1Label.text = "Sin datos disponibles"
+                    return
+                }
+                
+                section1Label.text = myDays[1].dayName
             default:
                 break
         }

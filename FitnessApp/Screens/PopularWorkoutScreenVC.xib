@@ -13,7 +13,6 @@
                 <outlet property="myPageControl" destination="pFn-rg-Vqh" id="mpr-rw-l3l"/>
                 <outlet property="section1Label" destination="EZU-wN-HOT" id="tbg-Dm-mO0"/>
                 <outlet property="sectionView1" destination="JMA-HD-wiB" id="sSG-Ju-Qe5"/>
-                <outlet property="sectionView2" destination="U7T-Nh-S52" id="taY-KM-CcO"/>
                 <outlet property="view" destination="iN0-l3-epB" id="pgQ-k0-3IZ"/>
             </connections>
         </placeholder>
@@ -47,18 +46,6 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </stackView>
-                <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="U7T-Nh-S52">
-                    <rect key="frame" x="16" y="171" width="361" height="631"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mi Seccion 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3qu-A1-rLG">
-                            <rect key="frame" x="0.0" y="0.0" width="361" height="631"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <color key="backgroundColor" red="0.47284566890000002" green="0.53339829139999995" blue="0.66777843240000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                </stackView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lunes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UwX-7I-Uxv">
                     <rect key="frame" x="16" y="120.99999999999999" width="361" height="25.333333333333329"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
@@ -71,16 +58,12 @@
             <constraints>
                 <constraint firstItem="pFn-rg-Vqh" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16" id="49V-5S-imI"/>
                 <constraint firstItem="UwX-7I-Uxv" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="69C-fi-vaj"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="U7T-Nh-S52" secondAttribute="trailing" constant="16" id="E4G-za-1Mg"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="U7T-Nh-S52" secondAttribute="bottom" constant="16" id="IfI-eu-AKY"/>
                 <constraint firstItem="pFn-rg-Vqh" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="NHX-GY-UcJ"/>
                 <constraint firstItem="UwX-7I-Uxv" firstAttribute="top" secondItem="pFn-rg-Vqh" secondAttribute="bottom" constant="16" id="Nom-dS-kQG"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="UwX-7I-Uxv" secondAttribute="trailing" constant="16" id="WfE-pP-4n9"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="pFn-rg-Vqh" secondAttribute="trailing" constant="16" id="dWY-vd-70w"/>
-                <constraint firstItem="U7T-Nh-S52" firstAttribute="top" secondItem="UwX-7I-Uxv" secondAttribute="top" constant="50" id="eXs-gd-u8d"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="JMA-HD-wiB" secondAttribute="trailing" constant="16" id="pLb-nE-OUQ"/>
                 <constraint firstItem="JMA-HD-wiB" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="rVe-Pf-AHN"/>
-                <constraint firstItem="U7T-Nh-S52" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="sgY-qc-hr8"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="JMA-HD-wiB" secondAttribute="bottom" constant="16" id="te3-cj-8oh"/>
                 <constraint firstItem="JMA-HD-wiB" firstAttribute="top" secondItem="UwX-7I-Uxv" secondAttribute="top" constant="50" id="xel-EL-9yC"/>
             </constraints>

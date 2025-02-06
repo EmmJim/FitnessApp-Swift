@@ -13,11 +13,11 @@ struct WorkoutPlan: Decodable {
 
 struct DayStruct: Decodable {
     let dayName: String
-    let routine: [RoutineStruct]
+    let routine: [Exercise]
     let routineName: String
 }
 
-struct RoutineStruct: Decodable {
+struct Exercise: Decodable {
     
     let exercise: String
     let series: Int
