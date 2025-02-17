@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -10,7 +10,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopularWorkoutScreenVC" customModule="FitnessApp" customModuleProvider="target">
             <connections>
                 <outlet property="dayLabel" destination="UwX-7I-Uxv" id="Az5-Zg-YHs"/>
+                <outlet property="excerciseName" destination="qLk-nG-SAH" id="wYO-j0-5YX"/>
+                <outlet property="imageView" destination="lci-Eo-6nI" id="jqz-Mu-s7u"/>
                 <outlet property="myPageControl" destination="pFn-rg-Vqh" id="mpr-rw-l3l"/>
+                <outlet property="routineName" destination="VaV-Ie-xqe" id="uuc-fQ-Tec"/>
                 <outlet property="section1Label" destination="EZU-wN-HOT" id="tbg-Dm-mO0"/>
                 <outlet property="sectionView1" destination="JMA-HD-wiB" id="sSG-Ju-Qe5"/>
                 <outlet property="view" destination="iN0-l3-epB" id="pgQ-k0-3IZ"/>
@@ -34,17 +37,42 @@
                         <action selector="segmentedControlValueChanged:" destination="-1" eventType="valueChanged" id="vcv-BO-q4T"/>
                     </connections>
                 </segmentedControl>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="JMA-HD-wiB">
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="JMA-HD-wiB">
                     <rect key="frame" x="16" y="171" width="361" height="631"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mi Seccion 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZU-wN-HOT">
-                            <rect key="frame" x="0.0" y="0.0" width="361" height="631"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Mi Seccion 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZU-wN-HOT">
+                            <rect key="frame" x="133" y="0.0" width="95.333333333333314" height="17.666666666666668"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VaV-Ie-xqe">
+                            <rect key="frame" x="160" y="17.666666666666657" width="41.333333333333343" height="17.666666666666671"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="iki-lw-Bp1">
+                            <rect key="frame" x="0.0" y="35.333333333333314" width="361" height="595.66666666666674"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qLk-nG-SAH">
+                                    <rect key="frame" x="160" y="0.0" width="41.333333333333343" height="20.333333333333332"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="workout2" translatesAutoresizingMaskIntoConstraints="NO" id="lci-Eo-6nI">
+                                    <rect key="frame" x="0.0" y="20.333333333333314" width="361" height="555"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4E-19-ues">
+                                    <rect key="frame" x="160" y="575.33333333333326" width="41.333333333333343" height="20.333333333333371"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </stackView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lunes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UwX-7I-Uxv">
                     <rect key="frame" x="16" y="120.99999999999999" width="361" height="25.333333333333329"/>
@@ -70,4 +98,7 @@
             <point key="canvasLocation" x="-8.3969465648854964" y="-11.267605633802818"/>
         </view>
     </objects>
+    <resources>
+        <image name="workout2" width="1155" height="648"/>
+    </resources>
 </document>

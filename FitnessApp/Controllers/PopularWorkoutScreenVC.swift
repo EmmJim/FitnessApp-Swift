@@ -16,6 +16,9 @@ class PopularWorkoutScreenVC: UIViewController {
     @IBOutlet var section1Label: UILabel!
     @IBOutlet var myPageControl: UISegmentedControl!
     @IBOutlet var dayLabel: UILabel!
+    @IBOutlet var routineName: UILabel!
+    @IBOutlet var excerciseName: UILabel!
+    @IBOutlet var imageView: UIImageView!
     
     
     private let mySections: [String] = ["L","M", "M", "J", "V", "S", "D"]
@@ -74,8 +77,9 @@ class PopularWorkoutScreenVC: UIViewController {
                                     for exerciseData in routineData {
                                         if let exercise = exerciseData["exercise"] as? String,
                                            let reps = exerciseData["reps"] as? Int,
+                                           let image = exerciseData["image"] as? String,
                                            let series = exerciseData["series"] as? Int {
-                                            let exerciseObj = Exercise(exercise: exercise, series: series, reps: reps)
+                                            let exerciseObj = Exercise(image: image, exercise: exercise, series: series, reps: reps)
                                             exercises.append(exerciseObj)
                                         }
                                     }
@@ -111,7 +115,29 @@ class PopularWorkoutScreenVC: UIViewController {
                         return
                     }
                     
-                    section1Label.text = myDays[0].dayName
+            section1Label.text = myDays[0].dayName.capitalized
+            routineName.text = myDays[0].routineName.capitalized
+            excerciseName.text = myDays[0].routine[0].exercise.capitalized
+            
+            if let url = URL(string: myDays[0].routine[0].image) {
+                // Usamos URLSession para descargar la imagen asincrónicamente
+                URLSession.shared.dataTask(with: url) { (data, response, error) in
+                    if let e = error {
+                        print("Error al descargar la imagen: \(e)")
+                        return
+                    }
+                    
+                    // Asegúrate de que los datos fueron descargados correctamente
+                    if let imageData = data {
+                        DispatchQueue.main.async {
+                            // Actualizamos la imagen en el hilo principal
+                            self.imageView.image = UIImage(data: imageData)
+                        }
+                    }
+                }.resume()
+            }
+            
+            
             case 1:
                 // Actualiza el contenido de sectionView2 si es necesario
                 dayLabel.text = "Martes"
@@ -121,7 +147,29 @@ class PopularWorkoutScreenVC: UIViewController {
                     return
                 }
                 
-                section1Label.text = myDays[1].dayName
+            section1Label.text = myDays[1].dayName.capitalized
+            routineName.text = myDays[1].routineName.capitalized
+            excerciseName.text = myDays[1].routine[0].exercise.capitalized
+            
+            if let url = URL(string: myDays[1].routine[0].image) {
+                // Usamos URLSession para descargar la imagen asincrónicamente
+                URLSession.shared.dataTask(with: url) { (data, response, error) in
+                    if let e = error {
+                        print("Error al descargar la imagen: \(e)")
+                        return
+                    }
+                    
+                    // Asegúrate de que los datos fueron descargados correctamente
+                    if let imageData = data {
+                        DispatchQueue.main.async {
+                            // Actualizamos la imagen en el hilo principal
+                            self.imageView.image = UIImage(data: imageData)
+                        }
+                    }
+                }.resume()
+            }
+            
+            
             default:
                 break
         }

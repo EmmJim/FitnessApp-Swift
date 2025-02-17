@@ -18,7 +18,7 @@ struct DayStruct: Decodable {
 }
 
 struct Exercise: Decodable {
-    
+    let image: String
     let exercise: String
     let series: Int
     let reps: Int
